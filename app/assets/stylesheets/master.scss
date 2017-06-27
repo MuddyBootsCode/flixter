@@ -16,6 +16,8 @@ body{
   background-image: image_url('navbackground.png');
 }
 
+
+
 .navbar-inverse a.navbar-brand {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
@@ -79,5 +81,9 @@ body{
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
   margin: 10px;
+}
+
+.clr{
+  clear:both;
 }
 

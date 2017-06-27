@@ -3,9 +3,12 @@
   <h1>Add a new course</h1>
 
   <%= simple_form_for @course, url: instructor_courses_path do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :cost %>
+      <label>Title</label>
+      <%= f.input :title, label: false %>
+      <label>Description</label>
+      <%= f.input :description, label: false %>
+      <label>Cost</label>
+      <%= f.input :cost, label:false %>
       <br />
       <%= f.submit "Create", class: 'btn btn-primary' %>
       <br />
