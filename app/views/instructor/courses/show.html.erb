@@ -7,7 +7,12 @@
       $(function() {
           $('.lessons').sortable({
               update: function ( event , ui ) {
-                  alert("Update URL: " + ui.item.data('update-url') + " Index: " + ui.item.index());
+                  $.ajax({
+                      type: 'PUT',
+                      url: ui.item.data('update-url'),
+                      dataType: 'json',
+                      data: { lesson: {row_order_position: ui.item.index() }}
+                  });
               }
           });
       });
@@ -29,7 +34,7 @@
           <ul class="lessons">
             <% section.lessons.rank(:row_order).each do |lesson| %>
                 <li data-update-url="<%= instructor_lesson_path(lesson) %>">
-                <li>
+
                   <b><%= lesson.title %></b>
 
                   <%= lesson.subtitle %>
